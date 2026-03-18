@@ -192,26 +192,6 @@ graph LR
     I --> D
 ```
 
-### Diagram Alur Rekomendasi
-
-```mermaid
-graph TD
-    A[Input: judul_buku] --> B{Ada di dataset?}
-    B -->|Ya| C[Dapatkan indeks buku]
-    B -->|Tidak| D[Cari judul mirip]
-    D --> E{Ditemukan?}
-    E -->|Ya| C
-    E -->|Tidak| F[Kembalikan []]
-    
-    C --> G[kneighbors]
-    G --> H[Dapatkan jarak & indeks]
-    H --> I[Loop i=1 to n_neighbors]
-    I --> J[Tambahkan buku ke rekomendasi]
-    J --> K[Sort by jarak]
-    K --> L[Ambil 5 teratas]
-    L --> M[Return [judul, rekomendasi]]
-```
-
 ### Struktur Data
 
 ```mermaid
